@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://assets 1 (platformer art)/Tiles/tile_0121.png" type="Texture" id=1]
+[ext_resource path="res://assets 1 (platformer art)/Tiles/tile_0002.png" type="Texture" id=1]
 [ext_resource path="res://scripts/platform.gd" type="Script" id=2]
 
 [node name="groundgrass2" type="KinematicBody2D"]
