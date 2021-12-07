@@ -1,5 +1,6 @@
 extends KinematicBody2D
 
+var ADD_SPEED = 0
 const SPEED = 250
 const JUMPFORCE = 1000
 const GRAVITY = 50
@@ -10,8 +11,15 @@ onready var jump_sound = $jumpsound
 onready var animation = $AnimatedSprite
 
 func _physics_process(delta):
+	
+	ADD_SPEED = int(Global.ADD_SPEED)
 	if Input.is_action_pressed("ui_right"):
-		velocity.x = SPEED
+		if ADD_SPEED == 0:
+			velocity.x = SPEED
+		
+		if ADD_SPEED != 0:
+						velocity.x = SPEED+ADD_SPEED
+		
 		if is_on_floor():
 			animation.play("walk")
 			animation.flip_h = false

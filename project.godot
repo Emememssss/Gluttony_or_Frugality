@@ -17,6 +17,7 @@ config/icon="res://icon.png"
 [autoload]
 
 Signals="*res://scripts/signals.gd"
+Global="*res://scripts/global.gd"
 
 [physics]
 

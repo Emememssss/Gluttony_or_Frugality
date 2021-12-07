@@ -2,52 +2,52 @@ extends Node2D
 
 export(Array, PackedScene) var scenes
 
-const X_FOOD_MIN_DISTANCE = 50
+const X_FOOD_MIN_DISTANCE = 20
 const X_FOOD_MAX_DISTANCE = 100
 
-const Y_FOOD_MIN_DISTANCE = -50
-const Y_FOOD_MAX_DISTANCE = 50
+var Y_FOOD_MIN_DISTANCE = -10
+const Y_FOOD_MAX_DISTANCE = -100
 
-const INITIAL_PLATFORMS_COUNT = 10
-const INITIAL_X_SPAWN = 2
-const INITIAL_Y_SPAWN_MARGIN = 200
+const INITIAL_FOOD_COUNT = 10
+const INITIAL_X_FOOD_SPAWN = 100
+const INITIAL_Y_FOOD_SPAWN_MARGIN = 80
 
 
-var spawn_x
-var spawn_y
+var spawn_food_x
+var spawn_food_y
 
 func _ready():
-	spawn_y = get_viewport().get_viewport().size.y - INITIAL_Y_SPAWN_MARGIN
-	spawn_x = INITIAL_X_SPAWN
-	_spawn_initial_platforms()
-	Signals.connect("create_new_platform", self, "create_new_platform")
+	spawn_food_y = get_viewport().get_viewport().size.y - INITIAL_Y_FOOD_SPAWN_MARGIN
+	spawn_food_x = INITIAL_X_FOOD_SPAWN
+	_spawn_initial_food()
+	Signals.connect("create_new_item_food", self, "create_new_item_food")
 
-func _spawn_initial_platforms():
-	for counter in range(INITIAL_PLATFORMS_COUNT):
-		_spawn_platform()
+func _spawn_initial_food():
+	for counter in range(INITIAL_FOOD_COUNT):
+		_spawn_food()
 
-func _spawn_platform():
-	var index
-	var new_platform
+func _spawn_food():
+	var food_index
+	var new_food
 	
-	index = rand_range(0, scenes.size())
-	new_platform = scenes[index].instance()
-	add_child(new_platform)
-	var spawn_position = Vector2(spawn_x, spawn_y)
+	food_index = rand_range(0, scenes.size())
+	new_food = scenes[food_index].instance()
+	add_child(new_food)
+	var spawn_position = Vector2(spawn_food_x, spawn_food_y)
 	
-	new_platform.position = spawn_position
+	new_food.position = spawn_position
 	
-	var new_spawn_x = new_platform.sprite_width + rand_range(X_FOOD_MIN_DISTANCE, X_FOOD_MAX_DISTANCE)
-	spawn_x = spawn_x + new_spawn_x
+	var new_spawn_x = new_food.sprite_food_width + rand_range(X_FOOD_MIN_DISTANCE, X_FOOD_MAX_DISTANCE)
+	spawn_food_x = spawn_food_x + new_spawn_x
 	
 	var new_spawn_y = rand_range(Y_FOOD_MIN_DISTANCE, Y_FOOD_MAX_DISTANCE)
-	spawn_y = spawn_y + new_spawn_y
+	spawn_food_y = spawn_food_y + new_spawn_y
 	
-	if spawn_y < 300:
-		spawn_y = 300
+	if spawn_food_y < 300:
+		spawn_food_y = 300
 	
-	if spawn_y > 600:
-		spawn_y = 600
+	if spawn_food_y > 600:
+		spawn_food_y = 600
 
-func create_new_platform():
-	_spawn_platform()
+func create_new_item_food():
+	_spawn_food()

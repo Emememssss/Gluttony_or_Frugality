@@ -3,7 +3,8 @@
 [ext_resource path="res://assets food/FreePixelFood/Assets/FreePixelFood/Sprite/Food/Apple.png" type="Texture" id=1]
 [ext_resource path="res://scripts/food.gd" type="Script" id=2]
 
-[node name="food" type="Node2D"]
+[node name="food" type="Area2D"]
+scale = Vector2( 2, 2 )
 script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
@@ -16,4 +17,5 @@ polygon = PoolVector2Array( -7.60157, -7.59272, 6.89776, -7.00444, 6.72473, 8.11
 
 [node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
 
+[connection signal="body_entered" from="." to="." method="_on_food_body_entered"]
 [connection signal="screen_entered" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_entered"]
