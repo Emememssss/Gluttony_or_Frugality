@@ -1,0 +1,31 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://scripts/Control.gd" type="Script" id=1]
+
+[node name="ctrlsinterface" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+margin_left = 16.0
+margin_top = 96.0
+margin_right = 211.0
+margin_bottom = 110.0
+rect_scale = Vector2( 5, 5 )
+text = "Game Controls should be here"
+
+[node name="ctrlsinterfacebackbutton" type="Button" parent="."]
+margin_left = 88.0
+margin_top = 304.0
+margin_right = 248.0
+margin_bottom = 344.0
+text = "BACK"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="pressed" from="ctrlsinterfacebackbutton" to="." method="_on_ctrlsinterfacebackbutton_pressed"]

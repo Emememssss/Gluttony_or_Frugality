@@ -11,7 +11,7 @@ config_version=4
 [application]
 
 config/name="Frugality-or-Gluttony"
-run/main_scene="res://scenes/game.tscn"
+run/main_scene="res://scenes/User Interface/Menu.tscn"
 config/icon="res://icon.png"
 
 [autoload]
