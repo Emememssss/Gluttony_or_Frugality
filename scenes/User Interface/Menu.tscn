@@ -19,6 +19,10 @@ __meta__ = {
 [node name="bgvid" type="VideoPlayer" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_left = -24.0
+margin_top = 16.0
+margin_right = -23.9999
+margin_bottom = 16.0
 stream = ExtResource( 2 )
 autoplay = true
 __meta__ = {

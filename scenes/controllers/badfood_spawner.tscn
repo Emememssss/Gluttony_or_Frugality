@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://scripts/badfood_spawner.gd" type="Script" id=1]
+[ext_resource path="res://scenes/items/BadFood1.tscn" type="PackedScene" id=2]
+
+[node name="badfoodspawner" type="Node2D"]
+script = ExtResource( 1 )
+scenes = [ ExtResource( 2 ) ]
