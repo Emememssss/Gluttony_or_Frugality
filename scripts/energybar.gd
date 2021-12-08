@@ -6,7 +6,7 @@ onready var timer = get_node("Timer")
 func _ready():
 	var eb = ProgressBar.new()
 	eb.set_percent_visible(70)
-	eb.set_value(99)
+	eb.set_value(100)
 	eb.set_size(Vector2(150,30))
 	eb.set_position(Vector2(40,70))
 	var style = StyleBoxFlat.new()
@@ -38,10 +38,15 @@ func _process(_delta):
 
 
 func _on_Timer_timeout():
-	var valu 
+	var valu
 	Energy -= 1
-	Energy += int(Global.foods) - int(Global.badfoods)
-	Energy = min(100,Energy)
 	
-	get_node("eb").set_value(Energy)
+	if Energy >= 100:
+		Energy = 100
+		get_node("eb").set_value(Energy)
+		
+	elif Energy < 100:
+		get_node("eb").set_value(Energy + int(Global.foods) - int(Global.badfoods))
+	
+
 	

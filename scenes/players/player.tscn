@@ -5,7 +5,7 @@
 [ext_resource path="res://assets 2 (jumper pack)/PNG/Players/bunny2_walk1.png" type="Texture" id=3]
 [ext_resource path="res://assets 2 (jumper pack)/PNG/Players/bunny2_ready.png" type="Texture" id=4]
 [ext_resource path="res://assets 2 (jumper pack)/PNG/Players/bunny2_jump.png" type="Texture" id=5]
-[ext_resource path="res://audio/official_sound.wav" type="AudioStream" id=6]
+[ext_resource path="res://audio/523771__matrixxx__legendary-jump.wav" type="AudioStream" id=6]
 [ext_resource path="res://scripts/player.gd" type="Script" id=7]
 [ext_resource path="res://assets extra/sample character.png" type="Texture" id=8]
 
@@ -16,15 +16,15 @@ animations = [ {
 "name": "idle",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 3 ), ExtResource( 1 ) ],
-"loop": true,
-"name": "walk",
-"speed": 10.0
-}, {
 "frames": [ ExtResource( 4 ), ExtResource( 5 ), ExtResource( 8 ) ],
 "loop": false,
 "name": "jump",
 "speed": 5.0
+}, {
+"frames": [ ExtResource( 3 ), ExtResource( 1 ) ],
+"loop": true,
+"name": "walk",
+"speed": 10.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=2]
