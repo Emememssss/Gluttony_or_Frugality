@@ -6,7 +6,6 @@
 script/source = "extends Area2D
 
 var sprite_food_width
-signal food_collected2
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -29,7 +28,6 @@ func collected2():
 	Global.foods += 1
 	Global.ADD_SPEED -= 5
 	queue_free()
-
 
 "
 
