@@ -2,11 +2,11 @@ extends Node2D
 
 export(Array, PackedScene) var scenes
 
-const X_FOOD_MIN_DISTANCE = 20
-const X_FOOD_MAX_DISTANCE = 100
+var X_FOOD_MIN_DISTANCE = 20
+var X_FOOD_MAX_DISTANCE = 100
 
-var Y_FOOD_MIN_DISTANCE = -10
-const Y_FOOD_MAX_DISTANCE = -100
+const Y_FOOD_MIN_DISTANCE = -100
+const Y_FOOD_MAX_DISTANCE = 100
 
 const INITIAL_FOOD_COUNT = 10
 const INITIAL_X_FOOD_SPAWN = 100
@@ -30,6 +30,23 @@ func _spawn_food():
 	var food_index
 	var new_food
 	
+	if (Global.progress_score < 100):
+		X_FOOD_MIN_DISTANCE = 20
+		X_FOOD_MAX_DISTANCE = 100
+	
+	elif (Global.progress_score > 100 and Global.progress_score <= 300):
+		X_FOOD_MIN_DISTANCE = 100
+		X_FOOD_MAX_DISTANCE = 300
+	
+	elif (Global.progress_score > 300 and Global.progress_score <= 600):
+		X_FOOD_MIN_DISTANCE = 300
+		X_FOOD_MAX_DISTANCE = 600
+	
+	elif (Global.progress_score > 600):
+		X_FOOD_MIN_DISTANCE = 600
+		X_FOOD_MAX_DISTANCE = 1000
+	
+	
 	food_index = rand_range(0, scenes.size())
 	new_food = scenes[food_index].instance()
 	add_child(new_food)
@@ -43,11 +60,11 @@ func _spawn_food():
 	var new_spawn_y = rand_range(Y_FOOD_MIN_DISTANCE, Y_FOOD_MAX_DISTANCE)
 	spawn_food_y = spawn_food_y + new_spawn_y
 	
-	if spawn_food_y < 300:
-		spawn_food_y = 300
+	if spawn_food_y < 200:
+		spawn_food_y = 200
 	
-	if spawn_food_y > 600:
-		spawn_food_y = 600
+	if spawn_food_y > 560:
+		spawn_food_y = 560
 
 func create_new_item_food():
 	_spawn_food()

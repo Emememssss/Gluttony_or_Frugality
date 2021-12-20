@@ -2,15 +2,15 @@ extends Node2D
 
 export (Array, PackedScene) var scenes
 
-const X_MIN_DISTANCE = 50
-const X_MAX_DISTANCE = 180
+const X_MIN_DISTANCE = 300
+const X_MAX_DISTANCE = 700
 
-const Y_MIN_DISTANCE = 0
-const Y_MAX_DISTANCE = 0
+const Y_MIN_DISTANCE = -50
+const Y_MAX_DISTANCE = 50
 
 const INITIAL_PLATFORMS_COUNT = 20
-const INITIAL_X_SPAWN = 100
-const INITIAL_Y_SPAWN_MARGIN = -500
+const INITIAL_X_SPAWN = 130
+const INITIAL_Y_SPAWN_MARGIN = 250
 
 var spawn_x
 var spawn_y
@@ -19,7 +19,7 @@ func _ready():
 	spawn_y = get_viewport().get_viewport().size.y - INITIAL_Y_SPAWN_MARGIN
 	spawn_x = INITIAL_X_SPAWN
 	_spawn_initial_platforms()
-	Signals.connect("create_new_platform", self, "create_new_platform")
+	Signals.connect("create_new_higherground", self, "create_new_higherground")
 
 func _spawn_initial_platforms():
 	for counter in range(INITIAL_PLATFORMS_COUNT):
@@ -42,11 +42,11 @@ func _spawn_platform():
 	var new_spawn_y = rand_range(Y_MIN_DISTANCE, Y_MAX_DISTANCE)
 	spawn_y = spawn_y + new_spawn_y
 	
-	if spawn_y < 300:
-		spawn_y = 300
+	if spawn_y < 320:
+		spawn_y = 320
 	
-	if spawn_y > 600:
-		spawn_y = 600
+	if spawn_y > 400:
+		spawn_y = 400
 
 func create_new_platform():
 	_spawn_platform()

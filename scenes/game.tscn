@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://scenes/controllers/platform_spawner.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/platform/groundgrass.tscn" type="PackedScene" id=2]
@@ -16,21 +16,28 @@
 [ext_resource path="res://scenes/items/BadFood2.tscn" type="PackedScene" id=14]
 [ext_resource path="res://scenes/items/BadFood1.tscn" type="PackedScene" id=15]
 [ext_resource path="res://scenes/items/Water.tscn" type="PackedScene" id=16]
+[ext_resource path="res://scripts/Progress Score.gd" type="Script" id=17]
+[ext_resource path="res://scripts/Weight Control.gd" type="Script" id=18]
+[ext_resource path="res://scenes/controllers/candyspawner.tscn" type="PackedScene" id=19]
+[ext_resource path="res://scenes/items/candy.tscn" type="PackedScene" id=20]
+[ext_resource path="res://scenes/platform/secondground.tscn" type="PackedScene" id=21]
+[ext_resource path="res://scenes/controllers/higherground_spawner.tscn" type="PackedScene" id=22]
+[ext_resource path="res://scripts/candy score.gd" type="Script" id=23]
 
 [node name="game" type="Node2D"]
 script = ExtResource( 9 )
 
-[node name="platform_spawner" parent="." instance=ExtResource( 1 )]
-scenes = [ ExtResource( 2 ), ExtResource( 3 ) ]
+[node name="background" parent="." instance=ExtResource( 5 )]
 
 [node name="foodspawner" parent="." instance=ExtResource( 7 )]
 scenes = [ ExtResource( 6 ), ExtResource( 8 ), ExtResource( 13 ), ExtResource( 16 ) ]
 
-[node name="background" parent="." instance=ExtResource( 5 )]
-
 [node name="player" parent="." instance=ExtResource( 4 )]
 position = Vector2( 100, 100 )
 scale = Vector2( 0.4, 0.4 )
+
+[node name="badfoodspawner" parent="." instance=ExtResource( 11 )]
+scenes = [ ExtResource( 15 ), ExtResource( 14 ) ]
 
 [node name="UI" type="CanvasLayer" parent="."]
 
@@ -54,5 +61,39 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="badfoodspawner" parent="." instance=ExtResource( 11 )]
-scenes = [ ExtResource( 15 ), ExtResource( 14 ) ]
+[node name="Progress Score" type="Label" parent="UI"]
+margin_left = 168.0
+margin_top = 24.0
+margin_right = 264.0
+margin_bottom = 64.0
+script = ExtResource( 17 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Weight Control" type="Control" parent="UI"]
+margin_right = 40.0
+margin_bottom = 40.0
+script = ExtResource( 18 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="candy score" type="Label" parent="UI"]
+margin_left = 8.0
+margin_top = 216.0
+margin_right = 160.0
+margin_bottom = 241.0
+script = ExtResource( 23 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="candyspawner" parent="." instance=ExtResource( 19 )]
+scenes = [ ExtResource( 20 ) ]
+
+[node name="higherground_spawner" parent="." instance=ExtResource( 22 )]
+scenes = [ ExtResource( 21 ) ]
+
+[node name="platform_spawner" parent="." instance=ExtResource( 1 )]
+scenes = [ ExtResource( 2 ), ExtResource( 3 ) ]

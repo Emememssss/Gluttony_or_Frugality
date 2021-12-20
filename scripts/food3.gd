@@ -15,7 +15,7 @@ func collected():
 	emit_signal("food_collected")
 	Global.food_collected = true
 	Global.foods += 1
-	Global.ADD_SPEED += 50
+	#Global.ADD_SPEED += 50
 	queue_free()
 
 

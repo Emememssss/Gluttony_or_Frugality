@@ -14,7 +14,7 @@ func badfoodcollected():
 	emit_signal("badfood_collected")
 	Global.badfood_collected = true
 	Global.badfoods += 1
-	Global.ADD_SPEED -= 10
+	#Global.ADD_SPEED -= 10
 	queue_free()
 
 

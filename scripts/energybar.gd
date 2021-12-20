@@ -18,9 +18,6 @@ func _ready():
 	timer.set_wait_time(0.5)
 	timer.start()
 	
-
-
-
 	
 func _process(_delta):
 	var valu = get_node("eb").get_value()
