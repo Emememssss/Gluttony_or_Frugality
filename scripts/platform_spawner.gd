@@ -2,8 +2,8 @@ extends Node2D
 
 export (Array, PackedScene) var scenes
 
-const X_MIN_DISTANCE = 50
-const X_MAX_DISTANCE = 180
+export var X_MIN_DISTANCE = 5
+export var X_MAX_DISTANCE = 5
 
 const Y_MIN_DISTANCE = 0
 const Y_MAX_DISTANCE = 0

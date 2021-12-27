@@ -4,7 +4,7 @@
 [ext_resource path="res://scripts/platform.gd" type="Script" id=2]
 
 [node name="groundgrass2" type="KinematicBody2D"]
-scale = Vector2( 5, 2 )
+scale = Vector2( 30, 2 )
 script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]

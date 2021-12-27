@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://scenes/controllers/platform_spawner.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/platform/groundgrass.tscn" type="PackedScene" id=2]
@@ -23,6 +23,7 @@
 [ext_resource path="res://scenes/platform/secondground.tscn" type="PackedScene" id=21]
 [ext_resource path="res://scenes/controllers/higherground_spawner.tscn" type="PackedScene" id=22]
 [ext_resource path="res://scripts/candy score.gd" type="Script" id=23]
+[ext_resource path="res://scenes/enemies/enemy.tscn" type="PackedScene" id=24]
 
 [node name="game" type="Node2D"]
 script = ExtResource( 9 )
@@ -97,3 +98,8 @@ scenes = [ ExtResource( 21 ) ]
 
 [node name="platform_spawner" parent="." instance=ExtResource( 1 )]
 scenes = [ ExtResource( 2 ), ExtResource( 3 ) ]
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="enemy" parent="Node2D" instance=ExtResource( 24 )]
+position = Vector2( 160, 272 )
