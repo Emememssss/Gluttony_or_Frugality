@@ -99,7 +99,7 @@ scenes = [ ExtResource( 21 ) ]
 [node name="platform_spawner" parent="." instance=ExtResource( 1 )]
 scenes = [ ExtResource( 2 ), ExtResource( 3 ) ]
 
-[node name="Node2D" type="Node2D" parent="."]
+[node name="enemy_node" type="Node2D" parent="."]
 
-[node name="enemy" parent="Node2D" instance=ExtResource( 24 )]
-position = Vector2( 160, 272 )
+[node name="enemy" parent="enemy_node" instance=ExtResource( 24 )]
+position = Vector2( 280, 272 )

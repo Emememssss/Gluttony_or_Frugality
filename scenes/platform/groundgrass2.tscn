@@ -5,6 +5,8 @@
 
 [node name="groundgrass2" type="KinematicBody2D"]
 scale = Vector2( 30, 2 )
+collision_layer = 2
+collision_mask = 9
 script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]

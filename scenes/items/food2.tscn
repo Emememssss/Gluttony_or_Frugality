@@ -35,6 +35,7 @@ func collected2():
 extents = Vector2( 8.02803, 5.92648 )
 
 [node name="banana" type="Area2D"]
+collision_layer = 4
 script = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]

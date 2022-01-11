@@ -12,7 +12,6 @@ onready var jump_sound = $jumpsound
 onready var animation = $AnimatedSprite
 
 func _physics_process(delta):
-	
 	ADD_SPEED = int(Global.ADD_SPEED)
 	ADD_JUMP = int(Global.ADD_JUMP)
 	if Input.is_action_pressed("ui_right"):
@@ -38,7 +37,7 @@ func _physics_process(delta):
 	
 	if is_on_floor():
 		velocity.y=0
-		
+
 	if Input.is_action_just_pressed("ui_up") and is_on_floor():
 		velocity.y -= JUMPFORCE + ADD_JUMP
 		jump_sound.play()
@@ -47,7 +46,22 @@ func _physics_process(delta):
 	velocity.y += GRAVITY 
 	move_and_slide(velocity, Vector2.UP)
 	velocity.x = lerp(velocity.x, 0, 0.2)
+	
+	if Global.bounce == true:
+		bounce()
+		Global.bounce = false
 
 
 func _on_VisibilityNotifier2D_screen_exited():
 	get_tree().reload_current_scene()
+
+func bounce():
+	velocity.y -= JUMPFORCE * 0.7
+	jump_sound.play()
+	animation.play("jump")
+	
+func ouch():
+	set_modulate(Color(1,0.3,0.3,0.8))
+
+func hurt_bounce():
+	velocity.y -= JUMPFORCE * 0.5 

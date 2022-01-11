@@ -8,6 +8,7 @@ extents = Vector2( 5.38078, 8.31692 )
 
 [node name="Soda" type="Area2D"]
 scale = Vector2( 2, 2 )
+collision_layer = 4
 script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
