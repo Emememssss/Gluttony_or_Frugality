@@ -42,26 +42,37 @@ func _physics_process(delta):
 		velocity.y -= JUMPFORCE + ADD_JUMP
 		jump_sound.play()
 		animation.play("jump")
-		
+	
 	velocity.y += GRAVITY 
+		
 	move_and_slide(velocity, Vector2.UP)
 	velocity.x = lerp(velocity.x, 0, 0.2)
 	
 	if Global.bounce == true:
 		bounce()
 		Global.bounce = false
+		
 
 
 func _on_VisibilityNotifier2D_screen_exited():
-	get_tree().reload_current_scene()
+	#get_tree().reload_current_scene()
+	get_tree().change_scene("res://scenes/User Interface/Death_Screen.tscn")
 
 func bounce():
 	velocity.y -= JUMPFORCE * 0.7
 	jump_sound.play()
 	animation.play("jump")
 	
-func ouch():
+func ouch(var enemyposx):
 	set_modulate(Color(1,0.3,0.3,0.8))
+	
+	if position.x < enemyposx:
+		velocity.x = -800
+		
+	elif position.x > enemyposx:
+		velocity.x = 800
 
-func hurt_bounce():
-	velocity.y -= JUMPFORCE * 0.5 
+	$Timer.start()
+
+func _on_Timer_timeout():
+	get_tree().change_scene("res://scenes/User Interface/Death_Screen.tscn")

@@ -37,5 +37,5 @@ func _on_top_checker_body_entered(body):
 	Global.bounce = true
 	
 func _on_sides_checker_body_entered(body):
-	body.ouch()
-	#get_tree().change_scene("res://scenes/User Interface/Menu.tscn")
+	body.ouch(position.x)
+
