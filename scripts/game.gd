@@ -16,3 +16,7 @@ func _on_food_collected():
 func _on_badfood_collected():
 	var BadFoodScore = "Bad Foods: "+String(badfoods)
 	Global.badfoods += 1
+
+
+func _on_yes_button_pressed():
+	pass # Replace with function body.

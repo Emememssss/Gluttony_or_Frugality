@@ -44,6 +44,9 @@ func _on_Timer_timeout():
 		
 	elif Energy < 100:
 		get_node("eb").set_value(Energy + int(Global.foods) - int(Global.badfoods))
+		
+	elif Energy <= 0:
+		get_tree().change_scene("res://scenes/User Interface/Death_Screen.tscn")
 	
 
 	
