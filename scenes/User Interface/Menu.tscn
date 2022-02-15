@@ -1,7 +1,6 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://scripts/Menu.gd" type="Script" id=1]
-[ext_resource path="res://vids/Official_Vid.ogv" type="VideoStream" id=2]
 [ext_resource path="res://audio/Sneaky Adventure - Gaming Background Music (HD).wav" type="AudioStream" id=3]
 
 [node name="Menu" type="Control"]
@@ -24,7 +23,6 @@ margin_left = -24.0
 margin_top = 16.0
 margin_right = -23.9998
 margin_bottom = 16.0
-stream = ExtResource( 2 )
 autoplay = true
 __meta__ = {
 "_edit_use_anchors_": false
