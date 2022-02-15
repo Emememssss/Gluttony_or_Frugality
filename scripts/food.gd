@@ -14,6 +14,7 @@ func _on_VisibilityNotifier2D_screen_entered():
 
 func _on_food_body_entered(body):
 	if body.is_in_group("Player"):
+		$GoodFoodSound.play()
 		collected()
 
 func collected():
@@ -21,4 +22,8 @@ func collected():
 	Global.food_collected = true
 	Global.foods += 1
 	#Global.ADD_SPEED += 50
+	$Sprite.set_visible(false)
+	#queue_free()
+
+func _on_GoodFoodSound_finished():
 	queue_free()

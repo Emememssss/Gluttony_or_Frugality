@@ -9,6 +9,7 @@ extends Control
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$VBoxContainer/startbutton.grab_focus()
+	$IntroSFX.play()
 
 
 
@@ -32,3 +33,5 @@ func _on_bgvid_finished():
 	$bgvid.play()
 
 
+func _on_IntroSFX_finished():
+	$IntroSFX.play()

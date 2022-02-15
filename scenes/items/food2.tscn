@@ -1,11 +1,13 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://assets food/FreePixelFood/Assets/FreePixelFood/Sprite/Food/Eggs.png" type="Texture" id=1]
+[ext_resource path="res://audio/Game Object Pick Up Sound Effect.wav" type="AudioStream" id=2]
 
 [sub_resource type="GDScript" id=1]
 script/source = "extends Area2D
 
 var sprite_food_width
+signal food_collected
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -20,6 +22,7 @@ func _on_VisibilityNotifier2D_screen_entered():
 
 func _on_banana_body_entered(body):
 	if body.is_in_group(\"Player\"):
+		$GoodFoodSound.play()
 		collected2()
 		
 func collected2():
@@ -27,8 +30,10 @@ func collected2():
 	Global.food_collected = true
 	Global.foods += 1
 	#Global.ADD_SPEED -= 5
-	queue_free()
+	$Sprite.set_visible(false)
 
+func _on_GoodFoodSound_finished():
+	queue_free()
 "
 
 [sub_resource type="RectangleShape2D" id=2]
@@ -47,5 +52,11 @@ shape = SubResource( 2 )
 
 [node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
 
+[node name="GoodFoodSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 2 )
+volume_db = -1.0
+pitch_scale = 1.4
+
 [connection signal="body_entered" from="." to="." method="_on_banana_body_entered"]
 [connection signal="screen_entered" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_entered"]
+[connection signal="finished" from="GoodFoodSound" to="." method="_on_GoodFoodSound_finished"]

@@ -11,6 +11,8 @@ var candy_collected = false
 var candy = 0
 var bounce = false
 
+var GoodFoodSFX = false
+
 func _ready():
 	pass # Replace with function body.
 

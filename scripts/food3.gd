@@ -9,6 +9,7 @@ func _ready():
 
 func _on_rice_body_entered(body):
 	if body.is_in_group("Player"):
+		$GoodFoodSound.play()
 		collected()
 
 func collected():
@@ -16,8 +17,12 @@ func collected():
 	Global.food_collected = true
 	Global.foods += 1
 	#Global.ADD_SPEED += 50
-	queue_free()
+	$Sprite.set_visible(false)
 
 
 func _on_VisibilityNotifier2D_screen_entered():
 	Signals.emit_signal("create_new_item_food")
+
+
+func _on_GoodFoodSound_finished():
+	queue_free()

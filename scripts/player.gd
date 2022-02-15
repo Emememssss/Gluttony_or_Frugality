@@ -51,8 +51,10 @@ func _physics_process(delta):
 	if Global.bounce == true:
 		bounce()
 		Global.bounce = false
-		
-
+	
+	if Global.GoodFoodSFX == true:
+		$GoodFoodSound.play()
+		Global.GoodFoodSFX = false
 
 func _on_VisibilityNotifier2D_screen_exited():
 	#get_tree().reload_current_scene()

@@ -12,6 +12,7 @@ func _on_VisibilityNotifier2D_screen_entered():
 
 func _on_BadFood1_body_entered(body):
 	if body.is_in_group("Player"):
+		$BadFoodSound.play()
 		badfoodcollected()
 		
 func badfoodcollected():
@@ -19,4 +20,8 @@ func badfoodcollected():
 	Global.badfood_collected = true
 	Global.badfoods += 1
 	#Global.ADD_SPEED -= 10
+	$Sprite.set_visible(false)
+
+
+func _on_BadFoodSound_finished():
 	queue_free()

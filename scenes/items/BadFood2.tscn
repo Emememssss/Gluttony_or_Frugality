@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://assets food/FreePixelFood/Assets/FreePixelFood/Sprite/Food/Whiskey.png" type="Texture" id=1]
 [ext_resource path="res://scripts/BadFood2.gd" type="Script" id=2]
+[ext_resource path="res://audio/Aww Sound Effect.wav" type="AudioStream" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 5.38078, 8.31692 )
@@ -20,5 +21,10 @@ shape = SubResource( 1 )
 [node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
 position = Vector2( -0.0232267, 0.0232267 )
 
+[node name="BadFoodSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+volume_db = -1.0
+
 [connection signal="body_entered" from="." to="." method="_on_Soda_body_entered"]
 [connection signal="screen_entered" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_entered"]
+[connection signal="finished" from="BadFoodSound" to="." method="_on_BadFoodSound_finished"]

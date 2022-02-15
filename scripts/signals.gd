@@ -5,3 +5,4 @@ signal create_new_item_food
 signal create_new_item_badfood
 signal create_new_candy
 signal create_new_higherground
+signal create_new_enemy
