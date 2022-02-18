@@ -1,11 +1,11 @@
 [gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://scripts/BadFood1.gd" type="Script" id=1]
-[ext_resource path="res://assets food/FreePixelFood/Assets/FreePixelFood/Sprite/Food/Burger.png" type="Texture" id=2]
+[ext_resource path="res://assets food/FreePixelFood/Assets/FreePixelFood/Sprite/Food/Beer.png" type="Texture" id=2]
 [ext_resource path="res://audio/Aww Sound Effect.wav" type="AudioStream" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 10.1501, 9.125 )
+extents = Vector2( 8, 8 )
 
 [node name="BadFood2" type="Area2D"]
 scale = Vector2( 2, 2 )
@@ -13,16 +13,12 @@ collision_layer = 4
 script = ExtResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 0.070435, 0.088501 )
-scale = Vector2( 0.0600062, 0.0606536 )
 texture = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
 
 [node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
-position = Vector2( 0.25, 0.1875 )
-scale = Vector2( 1.2875, 1.21875 )
 
 [node name="BadFoodSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 3 )
