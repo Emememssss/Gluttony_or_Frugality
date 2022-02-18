@@ -9,12 +9,12 @@ func _ready():
 func _on_VisibilityNotifier2D_screen_entered():
 	Signals.emit_signal("create_new_item_badfood")
 
-func _on_BadFood2_body_entered(body):
+
+func _on_BadFood1_body_entered(body):
 	if body.is_in_group("Player"):
 		$BadFoodSound.play()
 		badfoodcollected()
-
-	
+		
 func badfoodcollected():
 	emit_signal("badfood_collected")
 	Global.badfood_collected = true
@@ -25,4 +25,3 @@ func badfoodcollected():
 
 func _on_BadFoodSound_finished():
 	queue_free()
-
