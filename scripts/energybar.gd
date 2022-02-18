@@ -29,9 +29,12 @@ func _process(_delta):
 		var stylebox = .get_node("eb").get("custom_styles/fg")
 		stylebox.set_bg_color(Color.orange)
 		
-	elif valu <= 30:
+	elif valu <= 30 and valu>0:
 		var stylebox = .get_node("eb").get("custom_styles/fg")
 		stylebox.set_bg_color(Color.red)
+		
+	elif valu == 0:
+		get_tree().change_scene("res://scenes/User Interface/Death_Screen.tscn")
 
 
 func _on_Timer_timeout():
