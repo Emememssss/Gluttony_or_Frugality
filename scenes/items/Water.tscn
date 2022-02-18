@@ -19,8 +19,6 @@ position = Vector2( -0.140305, 0.84185 )
 shape = SubResource( 1 )
 
 [node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
-position = Vector2( 1.01469, 0.937997 )
-scale = Vector2( 3.069, 2.93552 )
 
 [connection signal="body_entered" from="." to="." method="_on_Water_body_entered"]
 [connection signal="screen_entered" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_entered"]
