@@ -28,6 +28,6 @@ scale = Vector2( 1.2875, 1.21875 )
 stream = ExtResource( 3 )
 volume_db = -1.0
 
-[connection signal="body_entered" from="." to="." method="_on_BadFood1_body_entered"]
+[connection signal="body_entered" from="." to="." method="_on_BadFood2_body_entered"]
 [connection signal="screen_entered" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_entered"]
 [connection signal="finished" from="BadFoodSound" to="." method="_on_BadFoodSound_finished"]

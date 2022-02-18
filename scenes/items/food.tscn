@@ -21,7 +21,7 @@ build_mode = 1
 polygon = PoolVector2Array( -5.1455, -3.2841, 4.58821, -1.51433, 3.46736, 2.20217, -2.43186, 2.32016, -6.20736, -1.39635 )
 
 [node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
-position = Vector2( -0.224808, 0.049283 )
+position = Vector2( -0.188378, 0.049283 )
 scale = Vector2( 1.28124, 1.20038 )
 
 [node name="GoodFoodSound" type="AudioStreamPlayer" parent="."]

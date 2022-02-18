@@ -1,10 +1,10 @@
 extends Area2D
 
-var sprite_candy_width
+var sprite_badfood_width
 signal candy_collected
 
 func _ready():
-	sprite_candy_width = $Sprite.texture.get_size().x * scale.x
+	sprite_badfood_width = $Sprite.texture.get_size().x * scale.x
 
 func _on_candy_body_entered(body):
 	if body.is_in_group("Player"):

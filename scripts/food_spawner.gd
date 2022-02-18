@@ -3,13 +3,13 @@ extends Node2D
 export(Array, PackedScene) var scenes
 
 var X_FOOD_MIN_DISTANCE = 20
-var X_FOOD_MAX_DISTANCE = 100
+var X_FOOD_MAX_DISTANCE = 30
 
 const Y_FOOD_MIN_DISTANCE = -100
 const Y_FOOD_MAX_DISTANCE = 100
 
-const INITIAL_FOOD_COUNT = 10
-const INITIAL_X_FOOD_SPAWN = 100
+const INITIAL_FOOD_COUNT = 150
+const INITIAL_X_FOOD_SPAWN = 10
 const INITIAL_Y_FOOD_SPAWN_MARGIN = 80
 
 
@@ -32,11 +32,11 @@ func _spawn_food():
 	
 	if (Global.progress_score < 100):
 		X_FOOD_MIN_DISTANCE = 20
-		X_FOOD_MAX_DISTANCE = 100
+		X_FOOD_MAX_DISTANCE = 30
 	
 	elif (Global.progress_score > 100 and Global.progress_score <= 300):
-		X_FOOD_MIN_DISTANCE = 100
-		X_FOOD_MAX_DISTANCE = 300
+		X_FOOD_MIN_DISTANCE = 20
+		X_FOOD_MAX_DISTANCE = 200
 	
 	elif (Global.progress_score > 300 and Global.progress_score <= 600):
 		X_FOOD_MIN_DISTANCE = 300
