@@ -247,7 +247,7 @@ margin_left = 6.0
 margin_top = 8.0
 margin_right = 56.0
 margin_bottom = 22.0
-text = "Slur:"
+text = "Slug:"
 __meta__ = {
 "_edit_use_anchors_": false
 }
