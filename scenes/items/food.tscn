@@ -23,8 +23,8 @@ polygon = PoolVector2Array( -7.60157, -7.59272, 6.89776, -7.00444, 6.72473, 8.11
 
 [node name="GoodFoodSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 3 )
-volume_db = -1.0
-pitch_scale = 1.4
+volume_db = -10.0
+pitch_scale = 1.2
 
 [connection signal="body_entered" from="." to="." method="_on_food_body_entered"]
 [connection signal="screen_entered" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_entered"]

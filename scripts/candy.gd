@@ -8,6 +8,7 @@ func _ready():
 
 func _on_candy_body_entered(body):
 	if body.is_in_group("Player"):
+		$BadFoodSound.play()
 		collected()
 
 
@@ -20,6 +21,8 @@ func collected():
 	Global.candy += 1
 	#Global.ADD_SPEED += 500
 	#Global.ADD_JUMP += 500
-	queue_free()
+	$Sprite.set_visible(false)
 	
 
+func _on_BadFoodSound_finished():
+	queue_free()

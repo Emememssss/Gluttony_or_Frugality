@@ -28,8 +28,13 @@ func _process(_delta):
 	elif valu > 30 and valu <= 60:
 		var stylsbox = .get_node("sb").get("custom_styles/fg")
 		stylsbox.set_bg_color(Color.orange)
+		Global.ADD_SPEED = -100
 		
 	elif valu <= 30 and valu > 0:
 		var stylsbox = .get_node("sb").get("custom_styles/fg")
 		stylsbox.set_bg_color(Color.green)
+		Global.ADD_SPEED = -50
+		
+	elif valu <= 0:
+		Global.ADD_SPEED = 0;
 	
