@@ -8,6 +8,7 @@ func _ready():
 	sprite_food_width = $Sprite.texture.get_size().x * scale.x
 
 
+
 func _on_VisibilityNotifier2D_screen_entered():
 	Signals.emit_signal("create_new_item_food")
 	
