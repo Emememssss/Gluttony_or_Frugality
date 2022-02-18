@@ -3,13 +3,13 @@ extends Node2D
 export(Array, PackedScene) var scenes
 
 var X_FOOD_MIN_DISTANCE = 20
-var X_FOOD_MAX_DISTANCE = 30
+var X_FOOD_MAX_DISTANCE = 50
 
 const Y_FOOD_MIN_DISTANCE = -100
 const Y_FOOD_MAX_DISTANCE = 100
 
-const INITIAL_FOOD_COUNT = 150
-const INITIAL_X_FOOD_SPAWN = 10
+const INITIAL_FOOD_COUNT = 100
+const INITIAL_X_FOOD_SPAWN = 100
 const INITIAL_Y_FOOD_SPAWN_MARGIN = 80
 
 
@@ -23,35 +23,38 @@ func _ready():
 	Signals.connect("create_new_item_food", self, "create_new_item_food")
 
 func _spawn_initial_food():
-	for counter in range(INITIAL_FOOD_COUNT):
+	#for counter in range(INITIAL_FOOD_COUNT):
+	for counter in range(3):
 		_spawn_food()
+		print("here")
 
 func _spawn_food():
 	var food_index
 	var new_food
 	
-	if (Global.progress_score < 100):
-		X_FOOD_MIN_DISTANCE = 20
-		X_FOOD_MAX_DISTANCE = 30
+	#if (Global.progress_score < 100):
+	#	X_FOOD_MIN_DISTANCE = 20
+	#	X_FOOD_MAX_DISTANCE = 30
 	
-	elif (Global.progress_score > 100 and Global.progress_score <= 300):
-		X_FOOD_MIN_DISTANCE = 20
-		X_FOOD_MAX_DISTANCE = 200
+	#elif (Global.progress_score > 100 and Global.progress_score <= 300):
+	#	X_FOOD_MIN_DISTANCE = 20
+	#	X_FOOD_MAX_DISTANCE = 200
 	
-	elif (Global.progress_score > 300 and Global.progress_score <= 600):
-		X_FOOD_MIN_DISTANCE = 300
-		X_FOOD_MAX_DISTANCE = 600
+	#elif (Global.progress_score > 300 and Global.progress_score <= 600):
+	#	X_FOOD_MIN_DISTANCE = 300
+	#	X_FOOD_MAX_DISTANCE = 600
 	
-	elif (Global.progress_score > 600):
-		X_FOOD_MIN_DISTANCE = 600
-		X_FOOD_MAX_DISTANCE = 1000
+	#elif (Global.progress_score > 600):
+	#	X_FOOD_MIN_DISTANCE = 600
+	#	X_FOOD_MAX_DISTANCE = 1000
 	
 	
 	food_index = rand_range(0, scenes.size())
 	new_food = scenes[food_index].instance()
+	print("test")
 	add_child(new_food)
-	var spawn_position = Vector2(spawn_food_x, spawn_food_y)
-	
+	#var spawn_position = Vector2(spawn_food_x, spawn_food_y)
+	var spawn_position = Vector2(spawn_food_x, 1)
 	new_food.position = spawn_position
 	
 	var new_spawn_x = new_food.sprite_food_width + rand_range(X_FOOD_MIN_DISTANCE, X_FOOD_MAX_DISTANCE)

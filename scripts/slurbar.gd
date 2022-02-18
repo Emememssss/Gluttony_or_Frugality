@@ -20,9 +20,9 @@ func _ready():
 	
 	
 func _process(_delta):
-	#var valu = get_node("sb").get_value()
-	var valu
-	valu =  Global.badfoods*10 - Global.foods
+	var valu = get_node("sb").get_value()
+	#var valu
+	#valu =  Global.badfoods*10 - Global.foods
 	
 	if valu >= 100:
 		valu = 100

@@ -8,9 +8,9 @@ func _ready():
 
 func _on_Water_body_entered(body):
 	if body.is_in_group("Player"):
-		collected()
+		collected3()
 
-func collected():
+func collected3():
 	emit_signal("food_collected")
 	Global.food_collected = true
 	Global.foods += 1
