@@ -19,6 +19,7 @@ func collected():
 	emit_signal("candy_collected")
 	Global.candy_collected = true
 	Global.candy += 1
+	Global.slug += 3.3
 	#Global.ADD_SPEED += 500
 	#Global.ADD_JUMP += 500
 	$Sprite.set_visible(false)

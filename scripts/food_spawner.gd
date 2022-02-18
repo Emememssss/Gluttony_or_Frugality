@@ -30,19 +30,23 @@ func _spawn_food():
 	var food_index
 	var new_food
 	
-	if (Global.progress_score < 100):
+	var level1 = 1000
+	var level2 = 2000
+	var level3 = 3000
+	
+	if (Global.progress_score < level1):
 		X_FOOD_MIN_DISTANCE = 20
 		X_FOOD_MAX_DISTANCE = 100
 	
-	elif (Global.progress_score > 100 and Global.progress_score <= 300):
+	elif (Global.progress_score > level1 and Global.progress_score <= level2):
 		X_FOOD_MIN_DISTANCE = 100
 		X_FOOD_MAX_DISTANCE = 300
 	
-	elif (Global.progress_score > 300 and Global.progress_score <= 600):
+	elif (Global.progress_score > level2 and Global.progress_score <= level3):
 		X_FOOD_MIN_DISTANCE = 300
 		X_FOOD_MAX_DISTANCE = 600
 	
-	elif (Global.progress_score > 600):
+	elif (Global.progress_score > level3):
 		X_FOOD_MIN_DISTANCE = 600
 		X_FOOD_MAX_DISTANCE = 1000
 	

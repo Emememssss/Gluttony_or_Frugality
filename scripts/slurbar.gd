@@ -18,7 +18,11 @@ func _ready():
 	
 func _process(_delta):
 	#var valu = get_node("sb").get_value()
-	var valu = Global.foods + Global.foods
+	var valu = float(Global.slug)
+	
+	
+		
+	
 	get_node("sb").set_value(valu)
 	if valu > 60:
 		var stylsbox = .get_node("sb").get("custom_styles/fg")

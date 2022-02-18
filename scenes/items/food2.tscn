@@ -54,7 +54,7 @@ shape = SubResource( 2 )
 
 [node name="GoodFoodSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 2 )
-volume_db = -10.0
+volume_db = -15.0
 pitch_scale = 1.2
 
 [connection signal="body_entered" from="." to="." method="_on_banana_body_entered"]

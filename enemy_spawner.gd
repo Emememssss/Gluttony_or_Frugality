@@ -29,19 +29,23 @@ func _spawn_enemy():
 	var ENEMY_index
 	var new_ENEMY
 	
-	if (Global.progress_score < 100):
+	var level1 = 1000
+	var level2 = 2000
+	var level3 = 3000
+	
+	if (Global.progress_score < level1):
 		X_ENEMY_MIN_DISTANCE = 600
 		X_ENEMY_MAX_DISTANCE = 1000
 	
-	elif (Global.progress_score > 100 and Global.progress_score <= 300):
+	elif (Global.progress_score > level1 and Global.progress_score <= level2):
 		X_ENEMY_MIN_DISTANCE = 300
 		X_ENEMY_MAX_DISTANCE = 600
 	
-	elif (Global.progress_score > 300 and Global.progress_score <= 600):
+	elif (Global.progress_score > level2 and Global.progress_score <= level3):
 		X_ENEMY_MIN_DISTANCE = 100
 		X_ENEMY_MAX_DISTANCE = 300
 	
-	elif (Global.progress_score > 600):
+	elif (Global.progress_score > level3):
 		X_ENEMY_MIN_DISTANCE = 20
 		X_ENEMY_MAX_DISTANCE = 100
 	

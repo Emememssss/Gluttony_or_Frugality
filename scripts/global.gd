@@ -10,6 +10,7 @@ var progress_score = 0
 var candy_collected = false
 var candy = 0
 var bounce = false
+var slug = 0
 
 var GoodFoodSFX = false
 

@@ -19,6 +19,7 @@ func badfoodcollected():
 	emit_signal("badfood_collected")
 	Global.badfood_collected = true
 	Global.badfoods += 1
+	Global.slug += 3.3
 	#Global.ADD_SPEED -= 10
 	$Sprite.set_visible(false)
 

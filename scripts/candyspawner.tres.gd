@@ -15,6 +15,7 @@ const INITIAL_Y_CANDY_SPAWN_MARGIN = 80
 var spawn_candy_x
 var spawn_candy_y
 
+
 func _ready():
 	spawn_candy_y = get_viewport().get_viewport().size.y - INITIAL_Y_CANDY_SPAWN_MARGIN
 	spawn_candy_x = INITIAL_X_CANDY_SPAWN
