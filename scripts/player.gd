@@ -26,7 +26,7 @@ func _physics_process(delta):
 			animation.play("walk")
 			animation.flip_h = false
 	elif Input.is_action_pressed("ui_left"):
-		velocity.x = -SPEED-ADD_SPEED
+		velocity.x = -SPEED
 		Global.progress_score -= 1;
 		if is_on_floor():
 			animation.play("walk")
