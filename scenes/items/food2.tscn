@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://assets food/FreePixelFood/Assets/FreePixelFood/Sprite/Food/Eggs.png" type="Texture" id=1]
+[ext_resource path="res://assets food/Food/Tomato.png" type="Texture" id=1]
 [ext_resource path="res://audio/Game Object Pick Up Sound Effect.wav" type="AudioStream" id=2]
 
 [sub_resource type="GDScript" id=1]
