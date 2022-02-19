@@ -2,6 +2,7 @@ extends Node2D
 
 var Slur = 100
 onready var timer = get_node("Timer")
+var slug
 
 func _ready():
 	var sb = ProgressBar.new()
@@ -19,6 +20,7 @@ func _ready():
 func _process(_delta):
 	#var valu = get_node("sb").get_value()
 	var valu = float(Global.slug)
+	#print(valu)
 	
 	
 		
@@ -27,17 +29,17 @@ func _process(_delta):
 	if valu > 60:
 		var stylsbox = .get_node("sb").get("custom_styles/fg")
 		stylsbox.set_bg_color(Color.red)
-		Global.ADD_SPEED = -200
+		Global.ADD_SPEED = -120
 		
 	elif valu > 30 and valu <= 60:
 		var stylsbox = .get_node("sb").get("custom_styles/fg")
 		stylsbox.set_bg_color(Color.orange)
-		Global.ADD_SPEED = -100
+		Global.ADD_SPEED = -70
 		
 	elif valu <= 30 and valu > 0:
 		var stylsbox = .get_node("sb").get("custom_styles/fg")
 		stylsbox.set_bg_color(Color.green)
-		Global.ADD_SPEED = -50
+		Global.ADD_SPEED = -30
 		
 	elif valu <= 0:
 		Global.ADD_SPEED = 0;

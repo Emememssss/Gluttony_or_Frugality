@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://scripts/Menu.gd" type="Script" id=1]
 [ext_resource path="res://vids/menu_bg.ogv" type="VideoStream" id=2]
@@ -13,13 +13,35 @@ font_data = ExtResource( 4 )
 size = 60
 font_data = ExtResource( 4 )
 
+[sub_resource type="StyleBoxFlat" id=5]
+bg_color = Color( 0.239216, 0.823529, 0.027451, 1 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 26
+font_data = ExtResource( 4 )
+
+[sub_resource type="StyleBoxFlat" id=6]
+bg_color = Color( 0.992157, 0.709804, 0.266667, 1 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 17
+outline_color = Color( 0, 0, 0, 1 )
+use_filter = true
+font_data = ExtResource( 4 )
+
+[sub_resource type="StyleBoxFlat" id=7]
+bg_color = Color( 0.992157, 0.709804, 0.266667, 1 )
+
+[sub_resource type="StyleBoxFlat" id=8]
+bg_color = Color( 0.866667, 0, 0, 1 )
+
 [node name="Menu" type="Control"]
 anchor_left = 0.000431508
 anchor_right = 1.00043
 anchor_bottom = 1.0
-margin_left = 23.5581
+margin_left = 22.9213
 margin_top = -16.6368
-margin_right = 23.5581
+margin_right = 22.9214
 margin_bottom = -16.6368
 script = ExtResource( 1 )
 __meta__ = {
@@ -30,10 +52,11 @@ __meta__ = {
 anchor_top = 0.00106125
 anchor_right = 1.0
 anchor_bottom = 1.00106
-margin_left = -24.0
-margin_top = 16.0
-margin_right = -23.9998
-margin_bottom = 16.0
+margin_left = -20.8396
+margin_top = 17.4771
+margin_right = -20.8395
+margin_bottom = 17.4772
+rect_pivot_offset = Vector2( 157.317, 457.527 )
 stream = ExtResource( 2 )
 autoplay = true
 __meta__ = {
@@ -78,51 +101,65 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
-anchor_top = 1.0
-anchor_bottom = 100.0
-margin_left = 26.279
-margin_top = -154.767
-margin_right = 113.279
-margin_bottom = -62.7656
-rect_scale = Vector2( 2, 1.5 )
-size_flags_stretch_ratio = 2.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="startbutton" type="Button" parent="VBoxContainer"]
-margin_right = 87.0
-margin_bottom = 20.0
-focus_neighbour_top = NodePath("../quitbutton")
-text = "Start"
-
-[node name="ctrlmenubutton" type="Button" parent="VBoxContainer"]
-margin_top = 24.0
-margin_right = 87.0
-margin_bottom = 44.0
-text = "Controls"
-
-[node name="howtogame" type="Button" parent="VBoxContainer"]
-margin_top = 48.0
-margin_right = 87.0
-margin_bottom = 68.0
-text = "How to play"
-
-[node name="quitbutton" type="Button" parent="VBoxContainer"]
-margin_top = 72.0
-margin_right = 87.0
-margin_bottom = 92.0
-focus_neighbour_bottom = NodePath("../startbutton")
-text = "Quit"
-
 [node name="IntroSFX" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 3 )
 volume_db = -10.0
 
+[node name="startbutton" type="Button" parent="."]
+margin_left = 16.4771
+margin_top = 382.294
+margin_right = 194.477
+margin_bottom = 430.294
+focus_neighbour_top = NodePath("../quitbutton")
+custom_styles/focus = SubResource( 5 )
+custom_fonts/font = SubResource( 3 )
+text = "Start"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ctrlmenubutton" type="Button" parent="."]
+margin_left = 25.0
+margin_top = 435.0
+margin_right = 183.0
+margin_bottom = 473.0
+rect_pivot_offset = Vector2( 152.279, 49.4982 )
+custom_styles/focus = SubResource( 6 )
+custom_fonts/font = SubResource( 4 )
+text = "Controls"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="howtogamebutton" type="Button" parent="."]
+margin_left = 25.0
+margin_top = 478.695
+margin_right = 183.0
+margin_bottom = 516.695
+rect_pivot_offset = Vector2( 152.279, 49.4982 )
+custom_styles/focus = SubResource( 7 )
+custom_fonts/font = SubResource( 4 )
+text = "How to Play?"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="quitbutton" type="Button" parent="."]
+margin_left = 33.0
+margin_top = 516.695
+margin_right = 175.0
+margin_bottom = 546.695
+rect_pivot_offset = Vector2( 152.279, 49.4982 )
+custom_styles/focus = SubResource( 8 )
+custom_fonts/font = SubResource( 4 )
+text = "Quit"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [connection signal="finished" from="bgvid" to="." method="_on_bgvid_finished"]
-[connection signal="pressed" from="VBoxContainer/startbutton" to="." method="_on_startbutton_pressed"]
-[connection signal="pressed" from="VBoxContainer/ctrlmenubutton" to="." method="_on_ctrlmenubutton_pressed"]
-[connection signal="pressed" from="VBoxContainer/howtogame" to="." method="_on_howtogame_pressed"]
-[connection signal="pressed" from="VBoxContainer/quitbutton" to="." method="_on_quitbutton_pressed"]
 [connection signal="finished" from="IntroSFX" to="." method="_on_IntroSFX_finished"]
+[connection signal="pressed" from="startbutton" to="." method="_on_startbutton_pressed"]
+[connection signal="pressed" from="ctrlmenubutton" to="." method="_on_ctrlmenubutton_pressed"]
+[connection signal="pressed" from="howtogamebutton" to="." method="_on_howtogamebutton_pressed"]
+[connection signal="pressed" from="quitbutton" to="." method="_on_quitbutton_pressed"]

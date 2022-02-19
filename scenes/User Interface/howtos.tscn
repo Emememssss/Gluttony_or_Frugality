@@ -1,6 +1,36 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://scripts/howtos.gd" type="Script" id=1]
+[ext_resource path="res://assets food/Food/Banana.png" type="Texture" id=2]
+[ext_resource path="res://assets font/ORBITRON-VARIABLEFONT_WGHT.TTF" type="DynamicFontData" id=3]
+[ext_resource path="res://assets food/Food/Burger.png" type="Texture" id=4]
+[ext_resource path="res://assets food/Food/Candy.png" type="Texture" id=5]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.807843, 0.384314, 0.384314, 1 )
+
+[sub_resource type="StyleBoxLine" id=2]
+color = Color( 0.992157, 0.709804, 0.266667, 1 )
+thickness = 10
+
+[sub_resource type="DynamicFont" id=3]
+size = 12
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 25
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 30
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=6]
+font_data = ExtResource( 3 )
+
+[sub_resource type="StyleBoxFlat" id=7]
+bg_color = Color( 0.992157, 0.709804, 0.266667, 1 )
 
 [node name="howtos" type="Control"]
 anchor_right = 1.0
@@ -10,22 +40,161 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label" type="Label" parent="."]
-margin_left = 240.0
-margin_top = 56.0
-margin_right = 696.0
-margin_bottom = 256.0
+[node name="BG panel" type="Panel" parent="."]
+margin_left = -8.0
+margin_top = -16.0
+margin_right = 1112.0
+margin_bottom = 744.0
+custom_styles/panel = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Above Line Panel" type="Panel" parent="BG panel"]
+margin_left = 8.0
+margin_top = 32.0
+margin_right = 1112.0
+margin_bottom = 587.0
+rect_pivot_offset = Vector2( 224, 136 )
+custom_styles/panel = SubResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Fruit Panels" type="Panel" parent="BG panel/Above Line Panel"]
+margin_left = 96.0
+margin_top = 288.0
+margin_right = 264.0
+margin_bottom = 376.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Banana" type="Sprite" parent="BG panel/Above Line Panel/Fruit Panels"]
+position = Vector2( 80, 48 )
+scale = Vector2( 5.18333, 4.78333 )
+texture = ExtResource( 2 )
+
+[node name="Fruit Panels2" type="Panel" parent="BG panel/Above Line Panel"]
+margin_left = 552.0
+margin_top = 272.0
+margin_right = 664.0
+margin_bottom = 376.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Burger" type="Sprite" parent="BG panel/Above Line Panel/Fruit Panels2"]
+position = Vector2( 56, 48 )
+scale = Vector2( 6.63333, 6.36667 )
+texture = ExtResource( 4 )
+
+[node name="Fruit Panels3" type="Panel" parent="BG panel/Above Line Panel"]
+margin_left = 696.0
+margin_top = 272.0
+margin_right = 808.0
+margin_bottom = 376.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ice-cream" type="Sprite" parent="BG panel/Above Line Panel/Fruit Panels3"]
+position = Vector2( 56, 56 )
+scale = Vector2( 3.31667, 3.18333 )
+texture = ExtResource( 5 )
+
+[node name="Good Foods" type="Label" parent="."]
+margin_left = 120.0
+margin_top = 272.0
+margin_right = 228.0
+margin_bottom = 293.0
 rect_scale = Vector2( 2, 2 )
-text = "HOW TO PLAY THE GAME?"
+rect_pivot_offset = Vector2( 64, 8 )
+custom_fonts/font = SubResource( 3 )
+text = "Good Foods"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Good Foods2" type="Label" parent="."]
+margin_left = 392.0
+margin_top = 264.0
+margin_right = 500.0
+margin_bottom = 285.0
+rect_scale = Vector2( 2, 2 )
+custom_fonts/font = SubResource( 3 )
+text = "Bad Foods"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Banana labels" type="Label" parent="."]
+margin_left = 160.0
+margin_top = 424.0
+margin_right = 272.0
+margin_bottom = 464.0
+custom_fonts/font = SubResource( 4 )
+text = "Banana"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Burger labels" type="Label" parent="."]
+margin_left = 576.0
+margin_top = 424.0
+margin_right = 688.0
+margin_bottom = 464.0
+custom_fonts/font = SubResource( 4 )
+text = "Burger"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Ice-cream label" type="Label" parent="."]
+margin_left = 736.0
+margin_top = 432.0
+margin_right = 874.0
+margin_bottom = 472.0
+custom_fonts/font = SubResource( 4 )
+text = "Ice Cream"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Game Mechanics Title" type="Label" parent="."]
+anchor_bottom = 0.03
+margin_left = 64.0
+margin_top = 40.0
+margin_right = 477.0
+margin_bottom = 61.0
+custom_fonts/font = SubResource( 5 )
+text = "Game Mechanics:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Description" type="Label" parent="."]
+margin_left = 96.0
+margin_top = 88.0
+margin_right = 905.0
+margin_bottom = 229.0
+custom_fonts/font = SubResource( 6 )
+text = "1. Energy will decrement over time.
+2. Eating Good Foods will replenish the energy
+3. While Eating Bad Foods will decrease the energy and increase sluggishness
+4. Drinking Water will quench the sluggishness.
+5. When the Energy Bar hits 0, hit by an emeny, or fall-off from the platform, the player loses.
+6. Overall, Eat GOOD FOODS while Avoiding the BAD FOODS."
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="howtosbackbutton" type="Button" parent="."]
-margin_left = 144.0
-margin_top = 152.0
-margin_right = 280.0
-margin_bottom = 184.0
+margin_left = 32.0
+margin_top = 512.0
+margin_right = 168.0
+margin_bottom = 544.0
+custom_styles/focus = SubResource( 7 )
 text = "BACK"
 __meta__ = {
 "_edit_use_anchors_": false
