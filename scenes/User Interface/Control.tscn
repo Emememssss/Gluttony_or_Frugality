@@ -1,173 +1,33 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://scripts/Control.gd" type="Script" id=1]
-[ext_resource path="res://assets font/Godot-Fontpack-d244bf6170b399a6d4d26a0d906058ddf2dafdf1/fonts/xolonium/xolonium-fonts-4.1/ttf/Xolonium-Regular.ttf" type="DynamicFontData" id=2]
-[ext_resource path="res://assets font/Godot-Fontpack-d244bf6170b399a6d4d26a0d906058ddf2dafdf1/fonts/source-code-pro/source-code-pro-2.010R-ro-1.030R-it/TTF/SourceCodePro-Black.ttf" type="DynamicFontData" id=3]
-[ext_resource path="res://assets food/FreePixelFood/Assets/FreePixelFood/Sprite/Food/Banana.png" type="Texture" id=4]
-[ext_resource path="res://assets food/FreePixelFood/Assets/FreePixelFood/Sprite/Food/Apple.png" type="Texture" id=5]
-[ext_resource path="res://assets extra/Water Bottle.png" type="Texture" id=6]
-[ext_resource path="res://assets food/FreePixelFood/Assets/FreePixelFood/Sprite/Food/Burger.png" type="Texture" id=7]
-[ext_resource path="res://assets food/FreePixelFood/Assets/FreePixelFood/Sprite/Food/soda.png" type="Texture" id=8]
-[ext_resource path="res://assets food/FreePixelFood/Assets/FreePixelFood/Sprite/Food/Potato.png" type="Texture" id=9]
-[ext_resource path="res://assets food/FreePixelFood/Assets/FreePixelFood/Sprite/Food/Candy.png" type="Texture" id=10]
 
-[sub_resource type="DynamicFont" id=1]
-size = 10
-font_data = ExtResource( 2 )
-
-[sub_resource type="DynamicFont" id=2]
-font_data = ExtResource( 3 )
-
-[sub_resource type="DynamicFont" id=3]
-size = 19
-font_data = ExtResource( 2 )
-
-[sub_resource type="DynamicFont" id=4]
-size = 19
-font_data = ExtResource( 2 )
-
-[sub_resource type="DynamicFont" id=5]
-size = 19
-font_data = ExtResource( 3 )
-
-[sub_resource type="DynamicFont" id=6]
-size = 19
-font_data = ExtResource( 3 )
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.992157, 0.709804, 0.266667, 1 )
 
 [node name="ctrlsinterface" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -1.0
-margin_top = 1.0
-margin_right = -1.0
-margin_bottom = 1.0
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Panel" type="Panel" parent="."]
-modulate = Color( 1, 0.286275, 0.286275, 1 )
-light_mask = 6
-margin_right = 1205.0
-margin_bottom = 866.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="cntrlsGameMechanics" type="Label" parent="."]
-margin_left = 28.0
-margin_top = 16.0
-margin_right = 155.0
-margin_bottom = 29.0
-rect_scale = Vector2( 2.20365, 4.00828 )
-custom_fonts/font = SubResource( 1 )
-text = "Game Mechanics:"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="cntrlsDescription" type="Label" parent="."]
-margin_left = 27.0
-margin_top = 66.0
-margin_right = 987.0
-margin_bottom = 222.0
-custom_fonts/font = SubResource( 2 )
-text = "1. Energy will decrement over time
-2. Eating Good Foods will replenish the energy
-3. While eating Bad Foods will decrease the energy and increase sluggishness
-4. Drinking water will quench the sluggishness
-5. When the energy bar hist 0, hit by an enemy, or fall-off from the platform, the player loses.
-6. Overall, eat GOOD FOODS while avoiding the BAD FOODS."
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="cntrlsGoodFood" type="Label" parent="."]
-margin_left = 20.0
-margin_top = 228.0
-margin_right = 137.0
-margin_bottom = 252.0
-custom_fonts/font = SubResource( 3 )
-text = "Good Food"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="cntrlsBadFood" type="Label" parent="."]
-margin_left = 563.0
-margin_top = 229.0
-margin_right = 685.0
-margin_bottom = 259.0
-custom_fonts/font = SubResource( 4 )
-text = "Bad Food"
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="Label" type="Label" parent="."]
+margin_left = 16.0
+margin_top = 96.0
+margin_right = 211.0
+margin_bottom = 110.0
+rect_scale = Vector2( 5, 5 )
+text = "Game Controls should be here"
 
 [node name="ctrlsinterfacebackbutton" type="Button" parent="."]
-margin_left = 36.0
-margin_top = 543.0
-margin_right = 168.0
-margin_bottom = 577.0
+margin_left = 88.0
+margin_top = 304.0
+margin_right = 248.0
+margin_bottom = 344.0
+custom_styles/focus = SubResource( 1 )
 text = "BACK"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="cntrlsBanana" type="Sprite" parent="."]
-position = Vector2( 70, 289 )
-scale = Vector2( 0.0388784, 0.0524707 )
-texture = ExtResource( 4 )
-
-[node name="cntrlsApple" type="Sprite" parent="."]
-position = Vector2( 182, 288 )
-scale = Vector2( 4.75, 4 )
-texture = ExtResource( 5 )
-
-[node name="cntrlsPotato" type="Sprite" parent="."]
-position = Vector2( 299, 293 )
-scale = Vector2( 4.75, 4 )
-texture = ExtResource( 9 )
-
-[node name="cntrlsWater" type="Sprite" parent="."]
-position = Vector2( 412, 285 )
-scale = Vector2( 2.375, 2.01562 )
-texture = ExtResource( 6 )
-
-[node name="cntrlsBurger" type="Sprite" parent="."]
-position = Vector2( 593, 288 )
-scale = Vector2( 0.188416, 0.210481 )
-texture = ExtResource( 7 )
-
-[node name="cntrlsSoda" type="Sprite" parent="."]
-position = Vector2( 709, 290 )
-scale = Vector2( 0.192408, 0.175982 )
-texture = ExtResource( 8 )
-
-[node name="cntrlsIceCream" type="Sprite" parent="."]
-position = Vector2( 835, 292 )
-scale = Vector2( 0.119094, 0.111458 )
-texture = ExtResource( 10 )
-
-[node name="Label" type="Label" parent="."]
-margin_left = 34.0
-margin_top = 332.0
-margin_right = 450.0
-margin_bottom = 369.0
-custom_fonts/font = SubResource( 5 )
-text = "Banana     Apple     Potato     Water"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Label2" type="Label" parent="."]
-margin_left = 563.0
-margin_top = 329.0
-margin_right = 882.0
-margin_bottom = 354.0
-custom_fonts/font = SubResource( 6 )
-text = "Burger     Soda     Ice Cream"
 __meta__ = {
 "_edit_use_anchors_": false
 }

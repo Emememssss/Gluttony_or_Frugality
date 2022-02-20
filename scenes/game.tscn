@@ -1,23 +1,24 @@
-[gd_scene load_steps=27 format=2]
+[gd_scene load_steps=28 format=2]
 
 [ext_resource path="res://scenes/controllers/platform_spawner.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/platform/groundgrass.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/platform/groundgrass2.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenes/players/player.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scenes/backgrounds/background.tscn" type="PackedScene" id=5]
-[ext_resource path="res://scenes/items/Banana.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scenes/items/food.tscn" type="PackedScene" id=6]
 [ext_resource path="res://scenes/controllers/food_spawner.tscn" type="PackedScene" id=7]
-[ext_resource path="res://scenes/items/Bread.tscn" type="PackedScene" id=8]
+[ext_resource path="res://scenes/items/food2.tscn" type="PackedScene" id=8]
 [ext_resource path="res://scripts/game.gd" type="Script" id=9]
 [ext_resource path="res://scripts/FoodScore.gd" type="Script" id=10]
 [ext_resource path="res://scenes/controllers/badfood_spawner.tscn" type="PackedScene" id=11]
 [ext_resource path="res://scripts/BadFoodScore.gd" type="Script" id=12]
-[ext_resource path="res://scenes/items/Tomato.tscn" type="PackedScene" id=13]
+[ext_resource path="res://scenes/items/food3.tscn" type="PackedScene" id=13]
 [ext_resource path="res://scenes/items/BadFood2.tscn" type="PackedScene" id=14]
 [ext_resource path="res://scenes/items/BadFood1.tscn" type="PackedScene" id=15]
 [ext_resource path="res://scenes/items/Water.tscn" type="PackedScene" id=16]
 [ext_resource path="res://scripts/Progress Score.gd" type="Script" id=17]
 [ext_resource path="res://scenes/slurbar.tscn" type="PackedScene" id=18]
+[ext_resource path="res://scenes/controllers/candyspawner.tscn" type="PackedScene" id=19]
 [ext_resource path="res://scenes/items/candy.tscn" type="PackedScene" id=20]
 [ext_resource path="res://scenes/platform/secondground.tscn" type="PackedScene" id=21]
 [ext_resource path="res://scenes/controllers/higherground_spawner.tscn" type="PackedScene" id=22]
@@ -44,11 +45,9 @@ position = Vector2( 100, 100 )
 scale = Vector2( 0.4, 0.4 )
 
 [node name="badfoodspawner" parent="." instance=ExtResource( 11 )]
-scenes = [ ExtResource( 15 ), ExtResource( 14 ), ExtResource( 20 ) ]
+scenes = [ ExtResource( 15 ), ExtResource( 14 ) ]
 
 [node name="UI" type="CanvasLayer" parent="."]
-
-[node name="slurbar" parent="UI" instance=ExtResource( 18 )]
 
 [node name="panel1" type="Panel" parent="UI"]
 margin_left = 40.0
@@ -248,10 +247,15 @@ margin_left = 6.0
 margin_top = 8.0
 margin_right = 56.0
 margin_bottom = 22.0
-text = "Slur:"
+text = "Slug:"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="slurbar" parent="UI" instance=ExtResource( 18 )]
+
+[node name="candyspawner" parent="." instance=ExtResource( 19 )]
+scenes = [ ExtResource( 20 ) ]
 
 [node name="higherground_spawner" parent="." instance=ExtResource( 22 )]
 scenes = [ ExtResource( 21 ) ]

@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Bad_Food_Sound (1).wav-43503dfc03a240d72bc89d4ebbe08567.sample"
+
+[deps]
+
+source_file="res://audio/Bad_Food_Sound (1).wav"
+dest_files=[ "res://.import/Bad_Food_Sound (1).wav-43503dfc03a240d72bc89d4ebbe08567.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

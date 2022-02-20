@@ -2,6 +2,7 @@ extends Node2D
 
 var Slur = 100
 onready var timer = get_node("Timer")
+var slug
 
 func _ready():
 	var sb = ProgressBar.new()
@@ -15,40 +16,31 @@ func _ready():
 	sb.set_name("sb")
 	.add_child(sb) 
 	var stylsbox = .get_node("sb").get("custom_styles/fg")
-	timer.set_wait_time(0.5)
-	timer.start()
-	
 	
 func _process(_delta):
 	#var valu = get_node("sb").get_value()
-	var valu
-	valu =  Global.badfoods*10 - Global.foods
+	var valu = float(Global.slug)
+	#print(valu)
 	
-	if valu >= 100:
-		valu = 100
+	
+		
 	
 	get_node("sb").set_value(valu)
 	if valu > 60:
 		var stylsbox = .get_node("sb").get("custom_styles/fg")
 		stylsbox.set_bg_color(Color.red)
-		Global.ADD_SPEED = -60
+		Global.ADD_SPEED = -120
 		
 	elif valu > 30 and valu <= 60:
 		var stylsbox = .get_node("sb").get("custom_styles/fg")
 		stylsbox.set_bg_color(Color.orange)
-		Global.ADD_SPEED = -40
+		Global.ADD_SPEED = -70
 		
-	elif valu <= 30:
+	elif valu <= 30 and valu > 0:
 		var stylsbox = .get_node("sb").get("custom_styles/fg")
 		stylsbox.set_bg_color(Color.green)
-		if valu != 0:
-			Global.ADD_SPEED = -200
-
-
-
+		Global.ADD_SPEED = -30
 		
-	#elif Slur <= 0:
-	#	get_tree().change_scene("res://scenes/User Interface/Death_Screen.tscn")
-	
-
+	elif valu <= 0:
+		Global.ADD_SPEED = 0;
 	
