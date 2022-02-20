@@ -1,10 +1,14 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://scripts/howtos.gd" type="Script" id=1]
 [ext_resource path="res://assets food/Food/Banana.png" type="Texture" id=2]
 [ext_resource path="res://assets font/ORBITRON-VARIABLEFONT_WGHT.TTF" type="DynamicFontData" id=3]
 [ext_resource path="res://assets food/Food/Burger.png" type="Texture" id=4]
 [ext_resource path="res://assets food/Food/Candy.png" type="Texture" id=5]
+[ext_resource path="res://assets food/Food/Tomato.png" type="Texture" id=6]
+[ext_resource path="res://assets food/Food/Potato.png" type="Texture" id=7]
+[ext_resource path="res://assets food/Food/soda.png" type="Texture" id=8]
+[ext_resource path="res://assets extra/Water Bottle.png" type="Texture" id=9]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.807843, 0.384314, 0.384314, 1 )
@@ -19,7 +23,7 @@ outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 3 )
 
 [sub_resource type="DynamicFont" id=4]
-size = 25
+size = 21
 font_data = ExtResource( 3 )
 
 [sub_resource type="DynamicFont" id=5]
@@ -61,53 +65,109 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Fruit Panels" type="Panel" parent="BG panel/Above Line Panel"]
-margin_left = 96.0
-margin_top = 288.0
-margin_right = 264.0
-margin_bottom = 376.0
+[node name="Banana Panel" type="Panel" parent="BG panel/Above Line Panel"]
+margin_left = 50.0
+margin_top = 292.0
+margin_right = 144.0
+margin_bottom = 365.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Banana" type="Sprite" parent="BG panel/Above Line Panel/Fruit Panels"]
-position = Vector2( 80, 48 )
-scale = Vector2( 5.18333, 4.78333 )
+[node name="Banana" type="Sprite" parent="BG panel/Above Line Panel/Banana Panel"]
+position = Vector2( 47.0625, 37.7813 )
+scale = Vector2( 2.79583, 3.49583 )
 texture = ExtResource( 2 )
 
-[node name="Fruit Panels2" type="Panel" parent="BG panel/Above Line Panel"]
-margin_left = 552.0
-margin_top = 272.0
-margin_right = 664.0
-margin_bottom = 376.0
+[node name="Burger Panel" type="Panel" parent="BG panel/Above Line Panel"]
+margin_left = 585.0
+margin_top = 292.0
+margin_right = 675.0
+margin_bottom = 367.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Burger" type="Sprite" parent="BG panel/Above Line Panel/Fruit Panels2"]
-position = Vector2( 56, 48 )
-scale = Vector2( 6.63333, 6.36667 )
+[node name="Burger" type="Sprite" parent="BG panel/Above Line Panel/Burger Panel"]
+position = Vector2( 41, 34 )
+scale = Vector2( 5.00834, 4.84984 )
 texture = ExtResource( 4 )
 
-[node name="Fruit Panels3" type="Panel" parent="BG panel/Above Line Panel"]
-margin_left = 696.0
-margin_top = 272.0
-margin_right = 808.0
-margin_bottom = 376.0
+[node name="IceCream Panel" type="Panel" parent="BG panel/Above Line Panel"]
+margin_left = 808.0
+margin_top = 292.0
+margin_right = 898.0
+margin_bottom = 367.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="ice-cream" type="Sprite" parent="BG panel/Above Line Panel/Fruit Panels3"]
-position = Vector2( 56, 56 )
-scale = Vector2( 3.31667, 3.18333 )
+[node name="ice-cream" type="Sprite" parent="BG panel/Above Line Panel/IceCream Panel"]
+position = Vector2( 43.9999, 38 )
+scale = Vector2( 2.53229, 2.53378 )
 texture = ExtResource( 5 )
 
+[node name="Soda Panel" type="Panel" parent="BG panel/Above Line Panel"]
+margin_left = 691.0
+margin_top = 292.0
+margin_right = 781.0
+margin_bottom = 367.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Soda" type="Sprite" parent="BG panel/Above Line Panel/Soda Panel"]
+position = Vector2( 43, 37 )
+scale = Vector2( 5.02273, 3.3 )
+texture = ExtResource( 8 )
+
+[node name="Water Panel" type="Panel" parent="BG panel/Above Line Panel"]
+margin_left = 393.0
+margin_top = 292.0
+margin_right = 487.0
+margin_bottom = 367.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Water" type="Sprite" parent="BG panel/Above Line Panel/Water Panel"]
+position = Vector2( 45.75, 37.25 )
+scale = Vector2( 2.20313, 2.20313 )
+texture = ExtResource( 9 )
+
+[node name="Potato Panel" type="Panel" parent="BG panel/Above Line Panel"]
+margin_left = 283.0
+margin_top = 292.0
+margin_right = 377.0
+margin_bottom = 367.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Potato" type="Sprite" parent="BG panel/Above Line Panel/Potato Panel"]
+position = Vector2( 50, 42 )
+scale = Vector2( 5.21875, 4.8125 )
+texture = ExtResource( 7 )
+
+[node name="Tomato Panel" type="Panel" parent="BG panel/Above Line Panel"]
+margin_left = 170.0
+margin_top = 292.0
+margin_right = 264.0
+margin_bottom = 367.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Tomato" type="Sprite" parent="BG panel/Above Line Panel/Tomato Panel"]
+position = Vector2( 46, 36 )
+scale = Vector2( 4.38587, 3.97283 )
+texture = ExtResource( 6 )
+
 [node name="Good Foods" type="Label" parent="."]
-margin_left = 120.0
-margin_top = 272.0
-margin_right = 228.0
-margin_bottom = 293.0
+margin_left = 99.0
+margin_top = 273.0
+margin_right = 207.0
+margin_bottom = 294.0
 rect_scale = Vector2( 2, 2 )
 rect_pivot_offset = Vector2( 64, 8 )
 custom_fonts/font = SubResource( 3 )
@@ -117,10 +177,10 @@ __meta__ = {
 }
 
 [node name="Good Foods2" type="Label" parent="."]
-margin_left = 392.0
-margin_top = 264.0
-margin_right = 500.0
-margin_bottom = 285.0
+margin_left = 564.0
+margin_top = 268.0
+margin_right = 672.0
+margin_bottom = 289.0
 rect_scale = Vector2( 2, 2 )
 custom_fonts/font = SubResource( 3 )
 text = "Bad Foods"
@@ -128,35 +188,24 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Banana labels" type="Label" parent="."]
-margin_left = 160.0
-margin_top = 424.0
-margin_right = 272.0
-margin_bottom = 464.0
+[node name="GoodFood labels" type="Label" parent="."]
+margin_left = 48.0
+margin_top = 384.0
+margin_right = 463.0
+margin_bottom = 424.0
 custom_fonts/font = SubResource( 4 )
-text = "Banana"
+text = "Banana     Tomato     Potato     Water"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Burger labels" type="Label" parent="."]
-margin_left = 576.0
-margin_top = 424.0
-margin_right = 688.0
-margin_bottom = 464.0
+[node name="BadFood labels" type="Label" parent="."]
+margin_left = 591.0
+margin_top = 387.0
+margin_right = 703.0
+margin_bottom = 427.0
 custom_fonts/font = SubResource( 4 )
-text = "Burger"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Ice-cream label" type="Label" parent="."]
-margin_left = 736.0
-margin_top = 432.0
-margin_right = 874.0
-margin_bottom = 472.0
-custom_fonts/font = SubResource( 4 )
-text = "Ice Cream"
+text = "Burger     Soda     Ice Cream"
 __meta__ = {
 "_edit_use_anchors_": false
 }
