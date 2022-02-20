@@ -13,21 +13,21 @@ font_data = ExtResource( 4 )
 size = 60
 font_data = ExtResource( 4 )
 
-[sub_resource type="StyleBoxFlat" id=5]
-bg_color = Color( 0.239216, 0.823529, 0.027451, 1 )
-
 [sub_resource type="DynamicFont" id=3]
 size = 26
 font_data = ExtResource( 4 )
 
-[sub_resource type="StyleBoxFlat" id=6]
-bg_color = Color( 0.992157, 0.709804, 0.266667, 1 )
+[sub_resource type="StyleBoxFlat" id=5]
+bg_color = Color( 0.239216, 0.823529, 0.027451, 1 )
 
 [sub_resource type="DynamicFont" id=4]
 size = 17
 outline_color = Color( 0, 0, 0, 1 )
 use_filter = true
 font_data = ExtResource( 4 )
+
+[sub_resource type="StyleBoxFlat" id=6]
+bg_color = Color( 0.992157, 0.709804, 0.266667, 1 )
 
 [sub_resource type="StyleBoxFlat" id=7]
 bg_color = Color( 0.992157, 0.709804, 0.266667, 1 )
@@ -73,10 +73,10 @@ margin_top = 83.9103
 margin_right = 352.63
 margin_bottom = 182.91
 grow_horizontal = 0
-custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0.792157, 0.647059, 0.215686, 1 )
 custom_colors/font_outline_modulate = Color( 0.792157, 0.760784, 0.694118, 1 )
 custom_constants/shadow_offset_x = 0
+custom_fonts/font = SubResource( 1 )
 text = "Gluttony or Frugality"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -92,9 +92,9 @@ margin_bottom = 243.68
 grow_horizontal = 0
 rect_rotation = -3.4
 rect_scale = Vector2( 0.4, 0.4 )
-custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 2 )
 text = "Either way we're going to eat!!"
 autowrap = true
 __meta__ = {
@@ -111,8 +111,8 @@ margin_top = 382.294
 margin_right = 194.477
 margin_bottom = 430.294
 focus_neighbour_top = NodePath("../quitbutton")
-custom_styles/focus = SubResource( 5 )
 custom_fonts/font = SubResource( 3 )
+custom_styles/focus = SubResource( 5 )
 text = "Start"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -124,8 +124,8 @@ margin_top = 435.0
 margin_right = 183.0
 margin_bottom = 473.0
 rect_pivot_offset = Vector2( 152.279, 49.4982 )
-custom_styles/focus = SubResource( 6 )
 custom_fonts/font = SubResource( 4 )
+custom_styles/focus = SubResource( 6 )
 text = "Controls"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -137,8 +137,8 @@ margin_top = 478.695
 margin_right = 183.0
 margin_bottom = 516.695
 rect_pivot_offset = Vector2( 152.279, 49.4982 )
-custom_styles/focus = SubResource( 7 )
 custom_fonts/font = SubResource( 4 )
+custom_styles/focus = SubResource( 7 )
 text = "How to Play?"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -150,8 +150,8 @@ margin_top = 516.695
 margin_right = 175.0
 margin_bottom = 546.695
 rect_pivot_offset = Vector2( 152.279, 49.4982 )
-custom_styles/focus = SubResource( 8 )
 custom_fonts/font = SubResource( 4 )
+custom_styles/focus = SubResource( 8 )
 text = "Quit"
 __meta__ = {
 "_edit_use_anchors_": false
